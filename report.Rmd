@@ -181,10 +181,12 @@ legend("topleft",col=c("black","black"),lty=c(1,3),c("Value Based on Total Retur
 ```
 
 ## Airthmatic Cumulative Returns
-```{r, echo=FALSE}
-y.range<-range(CPNY.acum[,1])
-plot(CPNY.acum, type="l",auto.grid=FALSE,xlab="Date",ylab="Airthmatic Cumulative Returns", ylim=y.range,minor.ticks=FALSE, main=tick)
+
+```{r, echo=FALSE, warning=FALSE}
+CPNY.acum$NetCum[dim(CPNY.acum$NetCum)[1]]
 ```
+
+This means that an investment made in `r tick` stock at `r  would have returned 34.7% by the end of 2013.
 
 ## Logarithmic Cumulative Returns
 ```{r, echo=FALSE}
