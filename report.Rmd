@@ -24,7 +24,7 @@ date_start = "2010-12-31"
 # end date in yyyy-mm-dd format
 date_end = "2013-12-31"
 # your working directory
-dir = "C:/Users/TradingLab15/Desktop/R_project"
+dir = "E:/Subjects/Winter_2016/ISB_backtesting"
 
 ##################
 # USER SPACE END #
@@ -186,7 +186,7 @@ legend("topleft",col=c("black","black"),lty=c(1,3),c("Value Based on Total Retur
 CPNY.acum$NetCum[dim(CPNY.acum$NetCum)[1]]
 ```
 
-This means that an investment made in `r tick` stock at `r  would have returned 34.7% by the end of 2013.
+This means that an investment made in `r tick` stock on `r date_start` would have returned `r CPNY.acum$NetCum[dim(CPNY.acum$NetCum)[1]]*100`% by the end of `r date_end`.
 
 ## Logarithmic Cumulative Returns
 ```{r, echo=FALSE}
@@ -217,5 +217,5 @@ plot(CPNY.monthly, type="l",auto.grid=FALSE,xlab="Date",ylab="Monthly Returns", 
 
 ## Drawdowns
 ```{r, echo=FALSE}
-Drawdowns
+Drawdowns[order(as.Date(Drawdowns$From, format="%y/%m/%d")),]
 ```

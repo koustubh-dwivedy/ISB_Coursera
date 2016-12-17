@@ -18,7 +18,7 @@ date_start = "2010-12-31"
 # end date in yyyy-mm-dd format
 date_end = "2013-12-31"
 # your working directory
-dir = "C:/Users/TradingLab15/Desktop/R_project"
+dir = "E:/Subjects/Winter_2016"
 
 ##################
 # USER SPACE END #
