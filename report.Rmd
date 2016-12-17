@@ -188,18 +188,32 @@ plot(CPNY.acum, type="l",auto.grid=FALSE,xlab="Date",ylab="Airthmatic Cumulative
 
 ## Logarithmic Cumulative Returns
 ```{r, echo=FALSE}
-y.range<-range(CPNY.logcum[,1])
-plot(CPNY.logcum, type="l",auto.grid=FALSE,xlab="Date",ylab="Logarithmic Cumulative Returns", ylim=y.range,minor.ticks=FALSE, main=tick)
+logcumret
 ```
 
 ## Logarithmic Total Returns
 [Lograthmic Return](https://en.wikipedia.org/wiki/Rate_of_return#Logarithmic_or_continuously_compounded_return)
 
+
+```{r, echo=FALSE}
+y.range<-range(CPNY.logcum[,1])
+plot(CPNY.logcum, type="l",auto.grid=FALSE,xlab="Date",ylab="Logarithmic Total Returns", ylim=y.range,minor.ticks=FALSE, main=tick)
+```
+
+
 ## Weekly Returns
+```{r, echo=FALSE}
+y.range<-range(CPNY.weekly[,1])
+plot(CPNY.weekly, type="l",auto.grid=FALSE,xlab="Date",ylab="Weekly Returns", ylim=y.range,minor.ticks=FALSE, main=tick)
+```
 
 ## Monthly Returns
+```{r, echo=FALSE}
+y.range<-range(CPNY.monthly[,1])
+plot(CPNY.monthly, type="l",auto.grid=FALSE,xlab="Date",ylab="Monthly Returns", ylim=y.range,minor.ticks=FALSE, main=tick)
+```
 
 ## Drawdowns
-```{r}
+```{r, echo=FALSE}
 Drawdowns
 ```
