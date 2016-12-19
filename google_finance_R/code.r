@@ -26,16 +26,6 @@ s<-c(tick)
 fin<-lapply(s, getFinancials, auto.assign=FALSE)
 names(fin)<-s
 
-test_1<-lapply(fin, function(x){
-	x$IS$A["Operating Income", ] / x$IS$A["Total Revenue",]
-	})
-data_test_1<-as.data.frame(test_1)
-
-test_2<-lapply(fin, function(x){
-	x$IS$A["Total Revenue", ] / x$IS$A["Operating Income",]
-	})
-data_test_2<-as.data.frame(test_2)
-
 # F_ROA
 NIBEA<-lapply(fin, function(x){
 	x$IS$A["Net Income Before Extra. Items", ]
@@ -49,10 +39,47 @@ data_TASS<-as.data.frame(TASS)
 
 
 # F_delta_ROA
+
 # F_CFO
+CFO<-lapply(fin, function(x){
+	x$CF$A["Cash from Operating Activities", ]
+	})
+data_CFO<-as.data.frame(CFO)
+
 # F_Accrual
+
 # F_delta_Margin
+GP<-lapply(fin, function(x){
+	x$IS$A["Gross Profit", ]
+	})
+data_GP<-as.data.frame(GP)
+
+TR<-lapply(fin, function(x){
+	x$IS$A["Total Revenue", ]
+	})
+data_TR<-as.data.frame(TR)
+
 # F_delta_Turn
+
 # F_delta_Lever
+TLTD<-lapply(fin, function(x){
+	x$BS$A["Total Long Term Debt", ]
+	})
+data_TLTD<-as.data.frame(TLTD)
+
 # F_delta_Liquid
+TCL<-lapply(fin, function(x){
+	x$BS$A["Total Current Liabilities", ]
+	})
+data_TCL<-as.data.frame(TCL)
+
+TCA<-lapply(fin, function(x){
+	x$BS$A["Total Current Assets", ]
+	})
+data_TCA<-as.data.frame(TCA)
+
 # EQ_Offer
+TCSO<-lapply(fin, function(x){
+	x$BS$A["Total Common Shares Outstanding", ]
+	})
+data_TCSO<-as.data.frame(TCSO)

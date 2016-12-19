@@ -25,6 +25,8 @@ date_start = "2010-12-31"
 date_end = "2011-06-30"
 # your working directory
 dir = "C:/Users/TradingLab15/Desktop/R_project/report"
+# web source from where to download data ("yahoo" or "google")
+web_source = "google"
 
 ##################
 # USER SPACE END #
@@ -38,7 +40,7 @@ library(quantmod)
 library(xts)
 
 # The following command gets data from Yahoo Finance (default)
-data.CPNY<-getSymbols(tick, from=date_start, to=date_end, auto.assign=FALSE)
+data.CPNY<-getSymbols(tick, from=date_start, to=date_end, auto.assign=FALSE, src = web_source)
 
 names(data.CPNY)<-paste(c("CPNY.Open","CPNY.High","CPNY.Low","CPNY.Close","CPNY.Volume","CPNY.Adjusted"))
 
@@ -162,6 +164,7 @@ Drawdowns<-table.Drawdowns(DJ.roc[,1])
 
 
 # Company Report `r tick`
+source: `r web_source` finance
 
 ## Price Returns
 The dollar change based solely on the closing price of a security is called capital gains and the percentage price in the closing price of a security is its price return. The price return is measured over some investment horizon (e.g., 1 day, 1 month, 1 year, etc.). The length of the period depends on the application, but the return calculations should be consistent such that cumulating all the 1-day returns in a given year should equal the annual return.
