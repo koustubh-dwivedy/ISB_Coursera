@@ -22,9 +22,9 @@ tick = "AMZN"
 # start date in yyyy-mm-dd format
 date_start = "2010-12-31"
 # end date in yyyy-mm-dd format
-date_end = "2013-12-31"
+date_end = "2011-06-30"
 # your working directory
-dir = "E:/Subjects/Winter_2016/ISB_backtesting"
+dir = "C:/Users/TradingLab15/Desktop/R_project"
 
 ##################
 # USER SPACE END #
@@ -208,11 +208,17 @@ plot(CPNY.logcum, type="l",auto.grid=FALSE,xlab="Date",ylab="Logarithmic Total R
 y.range<-range(CPNY.weekly[,1])
 plot(CPNY.weekly, type="l",auto.grid=FALSE,xlab="Date",ylab="Weekly Returns", ylim=y.range,minor.ticks=FALSE, main=tick)
 ```
+```{r, echo=FALSE}
+CPNY.weekly
+```
 
 ## Monthly Returns
 ```{r, echo=FALSE}
 y.range<-range(CPNY.monthly[,1])
 plot(CPNY.monthly, type="l",auto.grid=FALSE,xlab="Date",ylab="Monthly Returns", ylim=y.range,minor.ticks=FALSE, main=tick)
+```
+```{r, echo=FALSE}
+CPNY.monthly
 ```
 
 ## Drawdowns
